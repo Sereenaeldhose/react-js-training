@@ -28,8 +28,18 @@ h3 {
 .allproduct {
   text-align: center;
   display: block;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   height: 110%;
 }
 
+.head,
+.root {
+  padding: 10px; /* Add padding directly to the divs */
+}
 
+.text {
+ font-size: 50px;
+ font-style: italic;
+ color: white;
+ font-weight: bold;
+}

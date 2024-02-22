@@ -1,43 +1,60 @@
-import { Badge } from "react-bootstrap";
+let style = { padding: "25px" };
 
-let style = {padding : '25px'};
-let isAvailable = "Available";
+let getBadge = (isAvailable) =>
+  isAvailable ? (
+    <span className="badge bg-success" style={{ "margin-left": "40px" }}>
+      Available
+    </span>
+  ) : (
+    <span className="badge bg-danger" style={{ "margin-left": "40px" }}>
+      Out of stock
+    </span>
+  );
 
-
- let badgeVariant = isAvailable === "Available" ?  'success' : 'danger';
-
-
-
-function Product() {
+function Product(props) {
   return (
     <ul className="list-group shadow">
-      <li className = "list-group-item">
-        <div className = "media align-items-lg-center flex-column flex-lg-row p-3 d-flex">
+      {/* <li className="list-group-item">
+        <div className="media align-items-lg-center flex-column flex-lg-row p-3 d-flex">
           <div className="media-body order-2 order-lg-1" style={style}>
-            <h5 className="mt-0 font-weight-bold mb-2 "> Fresh Milk</h5>
-            <p className="font-italic text-muted mb-0 small"> <span style={{padding : '0px ,20px'}}>Currently no description is available for this product</span></p>
+            <h5 className="mt-0 font-weight-bold mb-2 "> {props.name}</h5>
+            <p className="font-italic text-muted mb-0 small">
+              {" "}
+              <span style={{ padding: "0px ,20px" }}>{props.desc}</span>
+            </p>
+
+          </div>
+          <div className="ml-lg-5 order-1 order-lg-1">
+            <h6 className="font-weight-bold my-2 "> {props.price} </h6>
+            <button className="btn btn-primary buttonProperty ">
+              Add to cart
+            </button>
             <div className="d-flex align-items-center justify-content-between mt-1">
-              <h6 className="font-weight-bold my-2"> Rs.32 </h6>
-              <button className="btn btn-primary buttonProperty">Add to cart</button>
-              <Badge variant={badgeVariant}>{isAvailable}</Badge>
+              {getBadge(props.isAvailable)}
             </div>
           </div>
-          <img src={require("../images/milk.jpeg")} alt="No preview found" className="ml-lg-5 order-1 order-lg-1" width="150"/>
+
+          <img
+            src={props.image}
+            alt="No preview found"
+            className="ml-lg-5 order-1 order-lg-1"
+            width="150"
+          />
+
         </div>
-      </li>
-      
+      </li> */}
       <li className = "list-group-item">
         <div className = "media align-items-lg-center flex-column flex-lg-row p-3 d-flex">
           <div className="media-body order-2 order-lg-1" style={style}>
-            <h5 className="mt-0 font-weight-bold mb-2 "> Eggs</h5>
-            <p className="font-italic text-muted mb-0 small"> <span style={{padding : '0px ,20px'}}>A pack of 30 eggs direclty collected from farmers </span></p>
+            <h5 className="mt-0 font-weight-bold mb-2 "> {props.name}</h5>
+            <p className="font-italic text-muted mb-0 small"> <span style={{padding : '0px ,20px'}}>{props.desc}</span></p>
             <div className="d-flex align-items-center justify-content-between mt-1">
-              <h6 className="font-weight-bold my-2"> Rs.230  </h6>
+              <h6 className="font-weight-bold my-2"> Rs.{props.price} </h6>
               <button className="btn btn-primary buttonProperty">Add to cart</button>
-               <Badge variant={badgeVariant}>{isAvailable}</Badge>
+            {getBadge(props.isAvailable)}
             </div>
           </div>
-          <img src={require("../images/egg.jpeg")} alt="No preview found" className="ml-lg-5 order-1 order-lg-1" width="200"/>
+          <img src={props.image} alt="No preview found" className="ml-lg-5 order-1 order-lg-1" width="150"/>
         </div>
       </li>
     </ul>

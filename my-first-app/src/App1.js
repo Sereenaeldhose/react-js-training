@@ -1,15 +1,16 @@
 import "./App.css";
-let style = { padding: "25px" };
 
 function App1() {
   return (
     <div className="row">
-      <div className="col-lg-8 mx-auto">
-        {" "}
+        <div className="col-lg-2 mx-auto"></div>
+      <div className="col-lg-4 mx-auto">
         <div className="allproduct">
-          <h3>All Products</h3>
+          <h1 className="text">All Products</h1> 
+          <img src={require("./images/all.jpeg")} alt="No preview found" className="ml-lg-5 order-1 order-lg-1" width="500" height="100"/>
         </div>
       </div>
+      <div className="col-lg-2 mx-auto"></div>
     </div>
   );
 }
