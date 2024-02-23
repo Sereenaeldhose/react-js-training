@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProductForm() {
+function ProductForm(props) {
   let [pName, updateName] = useState("");
   let [pPrice, updatePrice] = useState("");
   let [pDesc, updateDesc] = useState("");
@@ -49,12 +49,14 @@ function ProductForm() {
       isAvailable: Boolean(pAvailability),
       price: Number(pPrice),
     };
-    console.log(product);
+    
+
     updateName("");
     updatePrice("");
     updateDesc("");
     updateAvailability(false);
     updateImage("");
+    props.createProduct(product);
   };
 
   return (

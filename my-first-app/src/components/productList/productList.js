@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Product from "./product";
 
 let products = [
@@ -35,21 +36,26 @@ let products = [
     },
   ];
 
-  function ProductList (){
+  function ProductList (props){
   return (
+
     <div className="row">
       <div className="col-lg-8 mx-auto">
       <ul className="list-group shadow">
-        <Product
-          id={products[0].pId}
-          name={products[0].name}
-          desc={products[0].desc}
-          image={products[0].image}
-          isAvailable={products[0].isAvailable}
-          price={products[0].price}
-        ></Product>
 
-        <Product
+{products.map(product =>{
+  return <Product
+   id={products.pId}
+   name={product.name}
+   desc={product.desc}
+   image={product.image}
+   isAvailable={product.isAvailable}
+   price={product.price}
+ ></Product>
+})}
+
+
+        {/* <Product
           id={products[1].pId}
           name={products[1].name}
           desc={products[1].desc}
@@ -72,7 +78,7 @@ let products = [
           image={products[3].image}
           isAvailable={products[3].isAvailable}
           price={products[3].price}
-        ></Product>
+        ></Product> */}
         </ul>
       </div>
     </div>
