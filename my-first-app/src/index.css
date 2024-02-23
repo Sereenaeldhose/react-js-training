@@ -24,7 +24,7 @@ body {
   font-size: 12px;
   background-color: green;
   margin-top: 5px;
-  margin-right: 200px;
+  margin-right: 100px;
   margin-left: 10px;
 
 }
@@ -33,7 +33,7 @@ body {
   font-size: 12px;
   background-color: green;
   margin-right: 300px;
-
+  margin-left: 20px;
 }
 
 .disabled-button {
@@ -68,4 +68,10 @@ h3 {
  font-style: italic;
  color: white;
  font-weight: bold;
+}
+
+.form-bg {
+background-color: #07756d;
+padding: 10px 20px;
+margin-bottom: 20px;
 }
