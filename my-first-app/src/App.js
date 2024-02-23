@@ -45,6 +45,7 @@ function App() {
   return (
     <div className="row">
       <div className="col-lg-8 mx-auto">
+      <ul className="list-group shadow">
         <Product
           id={products[0].pId}
           name={products[0].name}
@@ -78,6 +79,7 @@ function App() {
           isAvailable={products[3].isAvailable}
           price={products[3].price}
         ></Product>
+        </ul>
       </div>
     </div>
   );
