@@ -3,9 +3,6 @@ import ProductList from "./components/productList/productList";
 import CreateProduct from "./components/createProduct/createProduct";
 import { useState } from "react";
 
-
-
-
 let products = [
   {
     pId: 1,
@@ -41,18 +38,17 @@ let products = [
   },
 ];
 
-
 function App() {
-  let [newProductList,updateProductList] = useState(products);
+  let [newProductList, updateProductList] = useState(products);
 
-  function createProductHandler(product){
+  function createProductHandler(product) {
     product.pId = newProductList.length + 1;
-   updateProductList([product, ...newProductList]);
+    updateProductList([product, ...newProductList]);
   }
-  
+
   return (
     <div>
-      <CreateProduct createProduct={createProductHandler} ></CreateProduct>
+      <CreateProduct createProduct={createProductHandler}></CreateProduct>
       <ProductList newProductList={newProductList}></ProductList>
     </div>
   );

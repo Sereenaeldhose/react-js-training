@@ -1,7 +1,8 @@
 import Product from "./product";
 
 function ProductList(props) {
-  return (
+  return props.newProductList.length === 0 ? <h2>No Products are Availble</h2> : 
+   (
     <div className="row">
       <div className="col-lg-8 mx-auto">
         <ul className="list-group shadow">
