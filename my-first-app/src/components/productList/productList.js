@@ -1,61 +1,25 @@
-import { useState } from "react";
 import Product from "./product";
 
-let products = [
-    {
-      pId: 1,
-      name: "Fresh Milk",
-      desc: "Pure Cow Milk directly sourced from farmers every morning.It is highly demandable product will be out of stock fastly",
-      image: require("../../images/milk.jpeg"),
-      isAvailable: true,
-      price: 32,
-    },
-    {
-      pId: 2,
-      name: "Egg",
-      desc: "Pack of 30 eggs directly sourced from farmers every morning.It is highly demandable product will be out of stock fastly",
-      image: require("../../images/egg.jpeg"),
-      isAvailable: false,
-      price: 32,
-    },
-    {
-      pId: 3,
-      name: "Vegetables",
-      desc: "Fresh Vegetables directly sourced from farmers every morning.It is highly demandable product will be out of stock fastly",
-      image: require("../../images/vegies.jpeg"),
-      isAvailable: true,
-      price: 32,
-    },
-    {
-      pId: 4,
-      name: "Fruits",
-      desc: "Fresh Fruits directly sourced from farmers every  morning. It is  highly demandable product will be out of stock fastly",
-      image: require("../../images/fruits.jpeg"),
-      isAvailable: true,
-      price: 32,
-    },
-  ];
-
-  function ProductList (props){
+function ProductList(props) {
   return (
-
     <div className="row">
       <div className="col-lg-8 mx-auto">
-      <ul className="list-group shadow">
+        <ul className="list-group shadow">
+          {props.newProductList.map((product) => {
+            return (
+              <Product
+                key={product.pId}
+                id={product.pId}
+                name={product.name}
+                desc={product.desc}
+                image={product.image}
+                isAvailable={product.isAvailable}
+                price={product.price}
+              ></Product>
+            );
+          })}
 
-{products.map(product =>{
-  return <Product
-   id={products.pId}
-   name={product.name}
-   desc={product.desc}
-   image={product.image}
-   isAvailable={product.isAvailable}
-   price={product.price}
- ></Product>
-})}
-
-
-        {/* <Product
+          {/* <Product
           id={products[1].pId}
           name={products[1].name}
           desc={products[1].desc}
@@ -83,6 +47,6 @@ let products = [
       </div>
     </div>
   );
-  }
+}
 
-  export default ProductList;
+export default ProductList;
